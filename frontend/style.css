@@ -1,0 +1,77 @@
+.event-card {
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.status-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.candidate-item {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+.candidate-item:last-child {
+    border-bottom: none;
+}
+
+.vote-count {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.voter-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.voter-item {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.voter-item:last-child {
+    border-bottom: none;
+}
+
+.admin-controls {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.event-status {
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+.winner-announcement {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+/* Loading spinner */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: #007bff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}

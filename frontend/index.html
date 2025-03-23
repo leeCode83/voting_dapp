@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting DApp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Voting DApp</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="admin.html">Admin Panel</a>
+                <button id="connectWallet" class="btn btn-outline-light">Connect Wallet</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div id="eventsList" class="row">
+            <!-- Events will be populated here -->
+        </div>
+
+        <!-- Event Details Modal -->
+        <div class="modal fade" id="eventModal" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Event Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="eventDetails"></div>
+                        <div id="voterRegistration" class="mt-3">
+                            <h5>Register as Voter</h5>
+                            <form id="voterRegistrationForm">
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="username" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit Registration</button>
+                            </form>
+                            <div id="registrationStatus" class="mt-3">
+                                <!-- Registration status will be shown here -->
+                            </div>
+                        </div>
+                        <div id="votingSection" class="mt-3">
+                            <!-- Voting options will be shown here -->
+                        </div>
+                        <div id="results" class="mt-3">
+                            <!-- Results will be shown here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load scripts in correct order -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+    <script type="module" src="contract.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
